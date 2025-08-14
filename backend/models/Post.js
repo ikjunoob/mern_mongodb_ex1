@@ -1,12 +1,24 @@
-const mongoose = require("mongoose");
+const mongoose = require("mongoose")
 
 const postSchema = new mongoose.Schema(
     {
-        title: { type: String, required: true, trim: true },
-        content: { type: String, required: true },
-        author: { type: String, default: "익명" },
-    },
-    { timestamps: true } // createdAt, updatedAt 자동 생성
-);
+        title: {
+            type: String,
+            require: true,
+            trim: true
+        },
+        content: {
+            type: String,
+            require: true,
+        },
+        auther: {
+            type: String,
+            default: "익명"
+        }
+    }, {
+    timestamps: true
+}
+)
 
-module.exports = mongoose.model("Post", postSchema);
+
+module.exports = mongoose.model("Post", postSchema)
